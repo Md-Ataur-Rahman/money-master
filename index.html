@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Money - Counter</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Money Counter</h1>
+            <section class="inner-main">
+                <div class="image-section">
+                    <img src="./image/money-banner.jpg" alt="">
+                </div>
+                <div class="counter-section">
+                    <div class="income-section">
+                        <h3>Income</h3>
+                        <label for="income">Income:</label>
+                        <input type="text" id="income">
+                    </div>
+                    <div class="expenses-section">
+                        <label for="food">Food:</label>
+                        <input type="text" id="food">
+                        <label for="rent">Rent:</label>
+                        <input type="text" id="rent">
+                        <label for="clothes">Clothes:</label>
+                        <input type="text" id="clothes">
+                    </div>
+                        
+                    <button id="calculate" class="btn">Calculate</button>
+                    <h2>Total Expenses: <span id="total-expenses">0</span></h2>
+                    <h2>Balane Expenses: <span id="balance-expenses">0</span></h2>
+                    
+                    <div class="saving-section">
+                        <div class="inner-saving-section">
+                            <div>
+                                <label for="save">Save:</label>
+                                <input type="text" id="save">
+                            </div>
+                            <span>%</span>
+                            <button id="save" class="btn">Save</button>
+                        </div>
+                        <h2>Saving Amount: <span id="saving-amount">0</span></h2>
+                        <h2>Remaining Balance: <span id="remaining-balance">0</span></h2>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
