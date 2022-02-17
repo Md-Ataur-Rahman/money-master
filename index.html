@@ -19,24 +19,25 @@
                     <h4 class="input-heading">Income</h3>
                     <div class="inputs-section">
                         <div class="input-section">
-                            <label class="label-text" for="income">Income:</label>
-                            <input type="text" id="income">
+                            <label class="label-text" for="income-input">Income:</label>
+                            <input type="text" id="income-input">
+                        </div>
+                        <h4 class="input-heading">Expenses</h3>
+                        <div class="input-section">
+                            <label class="label-text" for="food-input">Food:</label>
+                            <input type="text" id="food-input">
                         </div>
                         <div class="input-section">
-                            <label class="label-text" for="food">Food:</label>
-                            <input type="text" id="food">
+                            <label class="label-text" for="rent-input">Rent:</label>
+                            <input type="text" id="rent-input">
                         </div>
                         <div class="input-section">
-                            <label class="label-text" for="rent">Rent:</label>
-                            <input type="text" id="rent">
+                            <label class="label-text" for="clothes-input">Clothes:</label>
+                            <input type="text" id="clothes-input">
                         </div>
-                        <div class="input-section">
-                            <label class="label-text" for="clothes">Clothes:</label>
-                            <input type="text" id="clothes">
-                        </div>
-                        <button id="calculate" class="btn" style="margin: 2rem 0; text-align: center;">Calculate</button>
+                        <button id="calculate-btn" class="btn" style="margin: 2rem 0; text-align: center;">Calculate</button>
                         <h4>Total Expenses: <span id="total-expenses">0</span></h4>
-                        <h4>Balane Expenses: <span id="balance-expenses">0</span></h4>
+                        <h4>Balance Expenses: <span id="balance-expenses">0</span></h4>
                     </div>
                         
                     
@@ -44,10 +45,10 @@
                         <div class="inner-saving-section">
                             <div style="display: flex; align-items: center;">
                                 <span class="save-text">Save:</span>
-                                <input type="text" id="save">
+                                <input type="text" id="save-input">
                             </div>
                             <span class="parsent">%</span>
-                            <button id="save" class="btn">Save</button>
+                            <button id="save-btn" class="btn">Save</button>
                         </div>
                         <h4>Saving Amount: <span id="saving-amount">0</span></h4>
                         <h4>Remaining Balance: <span id="remaining-balance">0</span></h4>
@@ -56,5 +57,6 @@
             </section>
         </div>
     </main>
+    <script src="./js/app.js"></script>
 </body>
 </html>
