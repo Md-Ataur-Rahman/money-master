@@ -37,6 +37,9 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
      ) {
         totalExpenses.innerText = foodValue + rentValue + clothesValue;
         balanceExpenses.innerText = incomeValue - totalExpenses.innerText;
+        if(parseInt(totalExpenses.innerText) > incomeValue) {
+            return alert('Sorry, Your Total Expenses Value larger than Income.Please Gives The Average Number in Your Income');
+        }
     }else {
         totalExpenses.innerText = 0;
         balanceExpenses.innerText = 0;
@@ -55,10 +58,13 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
     if(
      (!isNaN(incomeValue) || (incomeValue === null) || (incomeValue === "")) && 
-     (!isNaN(saveValue) || (saveValue === null) || (saveValue === ""))
+     (!isNaN(saveValue) || (saveValue === null) || (saveValue === "") ())
     ) {
         saveAmount.innerText = (incomeValue * saveValue) / 100;
         remainingBalance.innerText = parseInt(balanceExpenses.innerText) - parseInt(saveAmount.innerText);
+        if(parseInt(saveAmount.innerText) > parseInt(balanceExpenses.innerText)) {
+            return alert('Sorry, Your Remaing Value larger than Balance Expenses, Please Gives The Average Number in Your Balance Expenses');
+        }
     } else {
         saveAmount.innerText = 0;
         return alert('Please Enter The Valid Data. Like a Number');
