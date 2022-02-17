@@ -9,7 +9,7 @@ function getInnerText(elem) {
     return getInnerText;
 }
 function setInputElement(elemInput) {
-    const elemInputValue = getInput(elemInput + '-input');
+    const elemInputValue = getInput(elemInput + '-input');     
     return elemInputValue;
 }
 function setExpensesElement(elemExpenses) {
@@ -26,33 +26,42 @@ document.getElementById('calculate-btn').addEventListener('click', function() {
     const foodValue = setInputElement('food');
     const rentValue = setInputElement('rent');
     const clothesValue = setInputElement('clothes');
-    const totalExpensesText = setExpensesElement('total');
-    const balancExpensesText = setExpensesElement('balance');
+    const totalExpenses = setExpensesElement('total');
+    const balanceExpenses = setExpensesElement('balance');
 
-    const totalExpenses = foodValue + rentValue + clothesValue;
-    totalExpensesText.innerText = totalExpenses;
-    balancExpensesText.innerText = incomeValue - totalExpenses;
-
+    if(
+     (!isNaN(incomeValue) || (incomeValue === null) || (incomeValue === "")) &&
+     (!isNaN(foodValue) || (foodValue === null) || (foodValue === "")) && 
+     (!isNaN(rentValue) || (rentValue === null) || (rentValue === "")) && 
+     (!isNaN(clothesValue) || (clothesValue === null) || (clothesValue === ""))
+     ) {
+        totalExpenses.innerText = foodValue + rentValue + clothesValue;
+        balanceExpenses.innerText = incomeValue - totalExpenses.innerText;
+    }else {
+        totalExpenses.innerText = 0;
+        balanceExpenses.innerText = 0;
+        return alert('Please Enter The Valid Data. Like a Number');
+    }
 });
 
 
 document.getElementById('save-btn').addEventListener('click', function () {    
-    const savingAmount = getInnerText('saving-amount');
+    const saveAmount = getInnerText('saving-amount');
     const incomeValue = setInputElement('income');
-    const saveNumber = setInputElement('save');
-    const balancExpensesText = getInnerText('balance-expenses');
-    const balancExpensesNumber = parseInt(balancExpensesText.innerText);
+    const saveValue = setInputElement('save');
+    const balanceExpenses = getInnerText('balance-expenses');
     const remainingBalance = getInnerText('remaining-balance');
 
 
-
-
-    
-    savingAmount.innerText = (incomeValue * saveNumber) / 100;
-    const savingAmountNumber = parseInt(savingAmount.innerText);
-
-    const totalRemainigBalance = balancExpensesNumber - savingAmountNumber;
-    remainingBalance.innerText = totalRemainigBalance;
-    
+    if(
+     (!isNaN(incomeValue) || (incomeValue === null) || (incomeValue === "")) && 
+     (!isNaN(saveValue) || (saveValue === null) || (saveValue === ""))
+    ) {
+        saveAmount.innerText = (incomeValue * saveValue) / 100;
+        remainingBalance.innerText = parseInt(balanceExpenses.innerText) - parseInt(saveAmount.innerText);
+    } else {
+        saveAmount.innerText = 0;
+        return alert('Please Enter The Valid Data. Like a Number');
+    }   
 })
 
